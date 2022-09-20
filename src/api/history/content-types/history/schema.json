@@ -4,7 +4,8 @@
   "info": {
     "singularName": "history",
     "pluralName": "histories",
-    "displayName": "History"
+    "displayName": "History",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -24,6 +25,9 @@
     "movement": {
       "type": "decimal",
       "required": true
+    },
+    "description": {
+      "type": "string"
     }
   }
 }

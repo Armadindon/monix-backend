@@ -1,0 +1,5 @@
+/**
+ * balance service
+ */
+
+export default () => ({});
