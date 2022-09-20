@@ -1,0 +1,29 @@
+{
+    "kind": "collectionType",
+    "collectionName": "histories",
+    "info": {
+        "singularName": "history",
+        "pluralName": "histories",
+        "displayName": "History"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "user": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "plugin::users-permissions.user"
+        },
+        "product": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::product.product"
+        },
+        "movement": {
+            "type": "decimal",
+            "required": true
+        }
+    }
+}
