@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-09-20T16:06:30.468Z"
+    "x-generation-date": "2022-09-21T20:51:52.694Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -35681,6 +35681,46 @@
         }
       }
     },
+    "/users/me": {
+      "get": {
+        "tags": [
+          "Users-Permissions - Users & Roles"
+        ],
+        "summary": "Get authenticated user info",
+        "responses": {
+          "200": {
+            "description": "Returns user info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users-Permissions-User"
+                },
+                "example": {
+                  "id": 1,
+                  "username": "foo",
+                  "email": "foo@strapi.io",
+                  "provider": "local",
+                  "confirmed": false,
+                  "blocked": false,
+                  "createdAt": "2022-05-19T17:35:35.096Z",
+                  "updatedAt": "2022-05-19T17:35:35.096Z"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/users/count": {
       "get": {
         "tags": [
@@ -35829,46 +35869,6 @@
                     "createdAt": "2022-05-19T17:35:35.096Z",
                     "updatedAt": "2022-06-04T07:11:59.551Z"
                   }
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/users/me": {
-      "get": {
-        "tags": [
-          "Users-Permissions - Users & Roles"
-        ],
-        "summary": "Get authenticated user info",
-        "responses": {
-          "200": {
-            "description": "Returns user info",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Users-Permissions-User"
-                },
-                "example": {
-                  "id": 1,
-                  "username": "foo",
-                  "email": "foo@strapi.io",
-                  "provider": "local",
-                  "confirmed": false,
-                  "blocked": false,
-                  "createdAt": "2022-05-19T17:35:35.096Z",
-                  "updatedAt": "2022-05-19T17:35:35.096Z"
                 }
               }
             }
