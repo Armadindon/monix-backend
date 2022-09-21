@@ -65,10 +65,18 @@ export default (plugin) => {
       user.id,
       { data: newData, populate: ["avatar"] }
     );
-    const file = await strapi.plugins["upload"].services.upload.findOne(
-      avatarToDelete
-    );
-    await strapi.plugins["upload"].services.upload.remove(file);
+    if (avatarToDelete) {
+      const file = await strapi.plugins["upload"].services.upload.findOne(
+        avatarToDelete
+      );
+      await strapi.plugins["upload"].services.upload.remove(file);
+    }
+
+    // We delete private fields
+    delete result.confirmationToken;
+    delete result.password;
+    delete result.resetPasswordToken;
+
     return result;
   };
 
