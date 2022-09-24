@@ -1,14 +1,11 @@
-FROM node:16
-# Installing libvips-dev for sharp Compatability
-RUN apt-get update && apt-get install libvips-dev -y
-ARG NODE_ENV=development
-ENV NODE_ENV=${NODE_ENV}
-WORKDIR /opt/
-COPY ./package.json ./package-lock.json ./
-ENV PATH /opt/node_modules/.bin:$PATH
-RUN npm install
-WORKDIR /opt/app
-COPY ./ .
+FROM strapi/base
+# Let WatchTower know to ignore this container for checking
+LABEL com.centurylinklabs.watchtower.enable="false"
+WORKDIR /app
+COPY ./package*.json ./
+RUN npm ci
+COPY . .
+ENV NODE_ENV production
 RUN npm run build
 EXPOSE 1337
-CMD ["npm", "run", "develop"]
+CMD ["npm", "start"]
