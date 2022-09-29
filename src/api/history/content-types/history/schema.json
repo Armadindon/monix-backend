@@ -28,6 +28,10 @@
     },
     "description": {
       "type": "string"
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
     }
   }
 }

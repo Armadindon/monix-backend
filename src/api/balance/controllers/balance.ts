@@ -107,7 +107,8 @@ export default {
       data: { 
         user: user.id,
         movement: amount,
-        description: `Rechargement ${amount} crédits`
+        description: `Rechargement ${amount} crédits`,
+        date: new Date().toISOString()
        },
     });
   },
