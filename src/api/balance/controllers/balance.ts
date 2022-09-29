@@ -59,7 +59,8 @@ export default {
         user: user.id,
         product: product,
         movement: -productEntity.price * amount,
-        description: `Achat ${productEntity.name} x ${amount}`
+        description: `Achat ${productEntity.name} x ${amount}`,
+        date: new Date().toISOString()
        },
     });
   },
