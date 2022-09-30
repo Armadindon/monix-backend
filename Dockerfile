@@ -1,11 +1,10 @@
-FROM strapi/base
-# Let WatchTower know to ignore this container for checking
-LABEL com.centurylinklabs.watchtower.enable="false"
+FROM node:16-alpine
+# Installing libvips-dev for sharp Compatability
+ENV NODE_ENV=production
 WORKDIR /app
-COPY ./package*.json ./
+COPY ./package.json ./package-lock.json ./
 RUN npm ci
-COPY . .
-ENV NODE_ENV production
+COPY ./ .
 RUN npm run build
 EXPOSE 1337
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
