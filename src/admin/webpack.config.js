@@ -1,8 +1,6 @@
-"use strict";
+import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
 
-const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
-
-module.exports = (config) => {
+export default (config) => {
   config.plugins.push(new MonacoWebpackPlugin());
 
   return config;
