@@ -7,10 +7,22 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "check": "npm run lint && npm run format:check",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "@types/koa": "^2.13.5"
+    "@types/koa": "^2.13.5",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
   },
   "dependencies": {
     "@strapi/plugin-documentation": "^4.3.8",
@@ -19,6 +31,7 @@
     "@strapi/provider-email-nodemailer": "^4.3.9",
     "@strapi/strapi": "4.3.8",
     "better-sqlite3": "7.4.6",
+    "husky": "^8.0.1",
     "strapi-plugin-import-export-entries": "^1.15.0"
   },
   "author": {

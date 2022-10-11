@@ -63,9 +63,7 @@
           }
         }
       },
-      "tags": [
-        "History"
-      ],
+      "tags": ["History"],
       "parameters": [
         {
           "name": "sort",
@@ -213,9 +211,7 @@
           }
         }
       },
-      "tags": [
-        "History"
-      ],
+      "tags": ["History"],
       "parameters": [],
       "operationId": "post/histories",
       "requestBody": {
@@ -294,9 +290,7 @@
           }
         }
       },
-      "tags": [
-        "History"
-      ],
+      "tags": ["History"],
       "parameters": [
         {
           "name": "id",
@@ -374,9 +368,7 @@
           }
         }
       },
-      "tags": [
-        "History"
-      ],
+      "tags": ["History"],
       "parameters": [
         {
           "name": "id",
@@ -465,9 +457,7 @@
           }
         }
       },
-      "tags": [
-        "History"
-      ],
+      "tags": ["History"],
       "parameters": [
         {
           "name": "id",
