@@ -3,7 +3,7 @@
  */
 
 export default {
-  buyProduct: async (ctx, next) => {
+  buyProduct: async (ctx) => {
     const requestData = ctx.request.body;
 
     if (!requestData || !requestData.product || !requestData.amount) {
@@ -64,7 +64,7 @@ export default {
        },
     });
   },
-  creditAccount: async (ctx, next) => {
+  creditAccount: async (ctx) => {
     const requestData = ctx.request.body;
 
     if (!requestData || !requestData.amount) {
