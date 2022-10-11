@@ -1,7 +1,6 @@
 import _ from "lodash";
 
 export default (plugin) => {
-
   // Create the new controller
   plugin.controllers.user.updateMe = async (ctx) => {
     const user = ctx.state.user;
