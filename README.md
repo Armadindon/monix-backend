@@ -1,6 +1,6 @@
 # Monix 2.0 Backend
 
-[![Build and Deploy docker image](https://github.com/ClubNix/monix-2.0/actions/workflows/deploy.yaml/badge.svg?branch=master)](https://github.com/ClubNix/monix-2.0/actions/workflows/deploy.yaml)
+[![Build and Deploy docker image](https://github.com/ClubNix/monix-backend/actions/workflows/deploy.yaml/badge.svg)](https://github.com/ClubNix/monix-backend/actions/workflows/deploy.yaml)
 
 <p align="center" width="100%">
     <img width="33%" src="https://raw.githubusercontent.com/ClubNix/monix-2.0/master/src/assets/monixcoin.svg"> 
