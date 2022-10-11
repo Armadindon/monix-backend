@@ -3,7 +3,7 @@
  */
 
 export default {
-  buyProduct: async (ctx, next) => {
+  buyProduct: async (ctx) => {
     const requestData = ctx.request.body;
 
     if (!requestData || !requestData.product || !requestData.amount) {
@@ -19,7 +19,10 @@ export default {
 
     // On récupère le user courant (TODO: Gérer les requetes pour un autre utilisateur) et le produit actuel
     const user = ctx.state.user;
-    const productEntity = await strapi.entityService.findOne("api::product.product", product);
+    const productEntity = await strapi.entityService.findOne(
+      "api::product.product",
+      product
+    );
     //On vérifie quelques informations avant d'enregistrer le changement
     if (!productEntity) {
       ctx.response.status = 404;
@@ -50,28 +53,27 @@ export default {
       data: { stock: productEntity.stock - amount },
     });
     strapi.entityService.update("plugin::users-permissions.user", user.id, {
-      data: { balance: user.balance - (amount * productEntity.price) },
+      data: { balance: user.balance - amount * productEntity.price },
     });
 
     ctx.response.status = 200;
     strapi.entityService.create("api::history.history", {
-      data: { 
+      data: {
         user: user.id,
         product: product,
         movement: -productEntity.price * amount,
         description: `Achat ${productEntity.name} x ${amount}`,
-        date: new Date().toISOString()
-       },
+        date: new Date().toISOString(),
+      },
     });
   },
-  creditAccount: async (ctx, next) => {
+  creditAccount: async (ctx) => {
     const requestData = ctx.request.body;
 
     if (!requestData || !requestData.amount) {
       ctx.response.status = 400;
       ctx.response.body = {
-        error:
-          "You must specify the amount (with 'amount' field)",
+        error: "You must specify the amount (with 'amount' field)",
       };
       return;
     }
@@ -105,12 +107,12 @@ export default {
 
     ctx.response.status = 200;
     strapi.entityService.create("api::history.history", {
-      data: { 
+      data: {
         user: user.id,
         movement: amount,
         description: `Rechargement ${amount} crédits`,
-        date: new Date().toISOString()
-       },
+        date: new Date().toISOString(),
+      },
     });
   },
 };

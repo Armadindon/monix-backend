@@ -1,10 +1,6 @@
 import _ from "lodash";
 
 export default (plugin) => {
-  const getController = (name) => {
-    return strapi.plugins["users-permissions"].controller(name);
-  };
-
   // Create the new controller
   plugin.controllers.user.updateMe = async (ctx) => {
     const user = ctx.state.user;
