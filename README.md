@@ -25,7 +25,15 @@ Plusieurs variables d'environnement sont nécéssaire à son utilisation:
 - `APP_KEYS` : Pour les clés secrètes de l'application, listes séparé par ","
 - `API_TOKEN_SALT` : Salt pour la creation de mot de passe, utilisé par l'algorithme [Bcrypt](https://fr.wikipedia.org/wiki/Bcrypt)
 - `ADMIN_JWT_SECRET` : Secret du jeton JWT pour le panel d'administration du backend
-- `JWT_SECRET` : Secret du jeton JWT   
+- `JWT_SECRET` : Secret du jeton JWT
+- `DATABASE_CLIENT` : Type de base de données, seulement `sqlite` et `postgres` sont actuellements supportés (par défaut, `sqlite`)
+- `DATABASE_HOST` : (Pour les base de données `postgres` seulement) Adresse de la base de données (par défaut, localhost)
+- `DATABASE_PORT` : (Pour les base de données `postgres` seulement) Port de la base de données (par défaut, 5432)
+- `DATABASE_NAME` : (Pour les base de données `postgres` seulement) Nom de la base de données (par défaut, monix)
+- `DATABASE_USERNAME` : (Pour les base de données `postgres` seulement) Username de l'utilisateur de la base de données (par défaut, postgres)
+- `DATABASE_PASSWORD` : (Pour les base de données `postgres` seulement) Mot de passe de l'utilisateur de la base de données (par défaut, 0000)
+- `DATABASE_SCHEMA` : (Pour les base de données `postgres` seulement) Schéma dans la base de données (par défaut, public)
+- `DATABASE_FILENAME` : (Pour les base de données `sqlite` seulement) Nom du fichier de base de données (par défaut, .tmp/data.db)   
 
 Ces variables d'environnements ne seront obligatoire seulement si vous voulez utiliser votre mail pour les alertes backend :
 - `MAIL_ADDRESS`: Mail utilisé par le backend
@@ -34,7 +42,7 @@ Ces variables d'environnements ne seront obligatoire seulement si vous voulez ut
 - `SMTP_PORT` : Port du serveur SMT pour l'envoi de mail
 
 Quelques volumes peuvent être utiles si vous souhaitez conserver certains éléménts:
-- `/app/.tmp` : Pour garder la base de données et les données associés (sqlite3)
+- `/app/.tmp` : Pour garder la base de données et les données associés (quand laissée par défaut) (sqlite3)
 - `/app/config` : Pour garder la config de l'instance Strapi
 - `/app/public/uploads` : Pour garder les fichiers uploads
 
