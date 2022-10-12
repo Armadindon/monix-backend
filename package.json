@@ -32,6 +32,7 @@
     "@strapi/strapi": "4.3.8",
     "better-sqlite3": "7.4.6",
     "husky": "^8.0.1",
+    "pg": "^8.8.0",
     "strapi-plugin-import-export-entries": "^1.15.0"
   },
   "author": {
