@@ -48,7 +48,10 @@ export default {
 
     //On enregistre le nombre de stock et le nombre de crédits de l'user
     strapi.entityService.update("api::product.product", product, {
-      data: { stock: productEntity.stock - amount },
+      data: {
+        stock:
+          productEntity.stock - amount >= 0 ? productEntity.stock - amount : 0,
+      },
     });
     strapi.entityService.update("plugin::users-permissions.user", user.id, {
       data: { balance: user.balance - amount * productEntity.price },
