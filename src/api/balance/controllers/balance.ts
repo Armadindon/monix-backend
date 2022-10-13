@@ -33,11 +33,9 @@ export default {
     }
 
     if (amount > productEntity.stock) {
-      ctx.response.status = 400;
       ctx.response.body = {
-        error: "Specified amount is superior to available stock",
+        warning: "Specified amount is superior to available stock",
       };
-      return;
     }
 
     if (amount <= 0) {
