@@ -68,6 +68,7 @@
       "required": true
     },
     "avatar": {
+      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false,
       "required": false,
