@@ -63,7 +63,9 @@
           }
         }
       },
-      "tags": ["Product"],
+      "tags": [
+        "Product"
+      ],
       "parameters": [
         {
           "name": "sort",
@@ -211,7 +213,9 @@
           }
         }
       },
-      "tags": ["Product"],
+      "tags": [
+        "Product"
+      ],
       "parameters": [],
       "operationId": "post/products",
       "requestBody": {
@@ -290,7 +294,9 @@
           }
         }
       },
-      "tags": ["Product"],
+      "tags": [
+        "Product"
+      ],
       "parameters": [
         {
           "name": "id",
@@ -368,7 +374,9 @@
           }
         }
       },
-      "tags": ["Product"],
+      "tags": [
+        "Product"
+      ],
       "parameters": [
         {
           "name": "id",
@@ -457,7 +465,9 @@
           }
         }
       },
-      "tags": ["Product"],
+      "tags": [
+        "Product"
+      ],
       "parameters": [
         {
           "name": "id",
